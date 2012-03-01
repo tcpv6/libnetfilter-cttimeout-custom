@@ -1,11 +1,13 @@
-include $(top_srcdir)/Make_global.am
+share_perl5dir	  = $(datarootdir)/perl5/Vyatta
+bin_sudo_usersdir = $(bindir)/sudo-users
+curverdir         = $(sysconfdir)/config-migrate/current
+etc_initdir = /etc/init.d/
 
-ACLOCAL_AMFLAGS = -I m4
+cpiop = find  . ! -regex '\(.*~\|.*\.bak\|.*\.swp\|.*\#.*\#\)' -print0 | \
+  cpio -0pd
 
-SUBDIRS = src include examples
-DIST_SUBDIRS = src include examples
-
-pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libnetfilter_cttimeout.pc
-
-${pkgconfig_DATA}: ${top_builddir}/config.status
+install-exec-hook:
+#	mkdir -p $(DESTDIR)$(cfgdir)
+#	cd templates-cfg; $(cpiop) $(DESTDIR)$(cfgdir)
+#	mkdir -p $(DESTDIR)$(opdir)
+#	cd templates-op; $(cpiop) $(DESTDIR)$(opdir)

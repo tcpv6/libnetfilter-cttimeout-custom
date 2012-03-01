@@ -1,0 +1,7 @@
+The Debian Package libnetfilter_cttimeout
+----------------------------------------
+
+This package contains the libnetfilter_cttimeout project developed by Pablo Niera Ayuso (email: pablo@netfilter.org). This 
+package includes the program.
+
+ -- Gaurav Sinha<gaurav.sinha@vyatta.com>  Thu, 1 Mar 2012

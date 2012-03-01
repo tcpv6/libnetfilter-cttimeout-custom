@@ -1,0 +1,14 @@
+Source: libnetfilter-cttimeout
+Section: contrib/net
+Priority: extra
+Maintainer: Gaurav Sinha <gaurav.sinha@vyatta.com>
+Build-Depends: debhelper (>= 5), 
+ autotools-dev, 
+Standards-Version: 3.7.2
+
+Package: libnetfilter-cttimeout
+Architecture: any
+Depends:  libmnl0 (>= 1.0.1),
+Description: This infrastructure allows you to define fine-grain timeout policies per flow
+ This basically allows from user-space to create timeout policy objects via 
+ nfct_timeout_*() API.
