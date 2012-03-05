@@ -1,36 +1,35 @@
-# Process this file with autoconf to produce a configure script.
-AC_PREREQ(2.59)
+dnl Process this file with autoconf to create configure.
 
-m4_define([VERSION_ID], [m4_esyscmd([
-	if test -f .version ; then
-	    head -n 1 .version | tr -d \\n
-	else
-	    echo -n 2.4
-	fi])])
-AC_INIT([libnetfilter-cttimeout], VERSION_ID, [vyatta-support@vyatta.com])
+AC_INIT([libnetfilter_cttimeout], [1.0.0])
+AC_CONFIG_AUX_DIR([build-aux])
+AC_CANONICAL_HOST
+AC_CONFIG_MACRO_DIR([m4])
+AC_CONFIG_HEADERS([config.h])
 
-test -n "$VYATTA_VERSION" || VYATTA_VERSION=$PACKAGE_VERSION
+AM_INIT_AUTOMAKE([-Wall foreign tar-pax no-dist-gzip dist-bzip2
+	1.6 subdir-objects])
 
-AC_CONFIG_AUX_DIR([config])
-AM_INIT_AUTOMAKE([gnu no-dist-gzip dist-bzip2 subdir-objects])
-AC_PREFIX_DEFAULT([/opt/vyatta])
+dnl kernel style compile messages
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+
+dnl Dependencies
+PKG_CHECK_MODULES([LIBMNL], [libmnl >= 1.0.0])
 
 AC_PROG_CC
-AM_PROG_AS
 AM_PROG_CC_C_O
-AC_PROG_LIBTOOL
-AC_PROG_LEX
-AC_PROG_YACC
+AC_DISABLE_STATIC
+LT_INIT
+CHECK_GCC_FVISIBILITY
+case "$host" in
+*-*-linux*) ;;
+*) AC_MSG_ERROR([Linux only, dude!]);;
+esac
 
-AC_ARG_ENABLE([nostrip],
-	AC_HELP_STRING([--enable-nostrip],
-	[include -nostrip option during packaging]),
-	[NOSTRIP=-nostrip], [NOSTRIP=])
-
-AC_CONFIG_FILES(
-	[Makefile])
-
-AC_SUBST(NOSTRIP)
-
+regular_CPPFLAGS="-D_FILE_OFFSET_BITS=64 -D_REENTRANT"
+regular_CFLAGS="-Wall -Waggregate-return -Wmissing-declarations \
+	-Wmissing-prototypes -Wshadow -Wstrict-prototypes \
+	-Wformat=2 -pipe"
+AC_SUBST([regular_CPPFLAGS])
+AC_SUBST([regular_CFLAGS])
+AC_CONFIG_FILES([Makefile src/Makefile include/Makefile include/libnetfilter_cttimeout/Makefile include/linux/Makefile include/linux/netfilter/Makefile examples/Makefile libnetfilter_cttimeout.pc doxygen.cfg])
 AC_OUTPUT
-
