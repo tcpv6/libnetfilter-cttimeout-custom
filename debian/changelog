@@ -1,3 +1,10 @@
+libnetfilter-cttimeout (1.0.0-2) unstable; urgency=low
+
+  * Fixing nfct compilation dependencies with libnetfilter-cttimeout
+    update
+
+ -- Gaurav Sinha <gaurav.sinha@vyatta.com>  Mon, 04 Jun 2012 21:00:09 -0700
+
 libnetfilter-cttimeout (1.0.0-1) unstable; urgency=low
 
   * Update 
