@@ -1,3 +1,9 @@
+libnetfilter-cttimeout (1.0.0-1) unstable; urgency=low
+
+  * Update 
+
+ -- Gaurav Sinha <gaurav.sinha@vyatta.com>  Mon, 04 Jun 2012 19:57:29 -0700
+
 libnetfilter-cttimeout (0.5) unstable; urgency=low
 
   [ Pablo Neira Ayuso ]
