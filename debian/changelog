@@ -1,3 +1,9 @@
+libnetfilter-cttimeout (1.0.0-3+vyos2+lithium2) unstable; urgency=low
+
+  * libnetfilter-cttimeout: add dh_gencontrol to enable development builds
+
+ -- Alex Harpin <development@landsofshadow.co.uk>  Mon, 29 Jun 2015 19:29:32 +0100
+ 
 libnetfilter-cttimeout (1.0.0-3+vyos2+lithium1) unstable; urgency=low
 
   * New branch
