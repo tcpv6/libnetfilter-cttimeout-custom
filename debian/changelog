@@ -1,3 +1,11 @@
+libnetfilter-cttimeout (1.0.0-3+vyos2+lithium3) unstable; urgency=low
+
+  [ Alex Harpin ]
+  * libnetfilter-cttimeout: reset debhelper to previous version
+  * libnetfilter-cttimeout: update debian packaging to include dev package
+
+ -- Alex Harpin <development@landsofshadow.co.uk>  Sun, 22 Nov 2015 10:36:53 +0000
+
 libnetfilter-cttimeout (1.0.0-3+vyos2+lithium2) unstable; urgency=low
 
   * libnetfilter-cttimeout: add dh_gencontrol to enable development builds
