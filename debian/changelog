@@ -1,3 +1,10 @@
+libnetfilter-cttimeout (1.0.0-3+vyos2+lithium3+mintel1) unstable; urgency=low
+
+  [ Jason Hendry ]
+  * Updating libnetfilter-cttimeout
+
+ -- Jason Hendry <jhendry@mintel.com>  Wed, 9 Nov 2016 10:10:00 +0000
+
 libnetfilter-cttimeout (1.0.0-3+vyos2+lithium3) unstable; urgency=low
 
   [ Alex Harpin ]

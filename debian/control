@@ -9,7 +9,7 @@ Homepage: http://www.netfilter.org/projects/libnetfilter_cttimeout
 Package: libnetfilter-cttimeout-dev
 Section: libdevel
 Architecture: any
-Depends: libnetfilter-cttimeout1 (= ${binary:Version}), libnfnetlink-dev (>= 1.0.0), pkg-config, ${misc:Depends}
+Depends: libnetfilter-cttimeout (= ${binary:Version}), libnfnetlink-dev (>= 1.0.0), pkg-config, ${misc:Depends}
 Description: fine-grain connection tracking timeout infrastructure for netfilter
  libnetfilter_cttimeout is the userspace library that provides the programming
  interface to the fine-grain connection tracking timeout infrastructure. With
@@ -18,7 +18,7 @@ Description: fine-grain connection tracking timeout infrastructure for netfilter
  .
  This package provides development files and static libraries.
 
-Package: libnetfilter-cttimeout1
+Package: libnetfilter-cttimeout
 Section: libs
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
@@ -28,10 +28,10 @@ Description: fine-grain connection tracking timeout infrastructure for netfilter
  this library, you can create, update and delete timeout policies that can be
  attached to traffic flows. This library is used by conntrack-tools.
 
-Package: libnetfilter-cttimeout1-dbg
+Package: libnetfilter-cttimeout-dbg
 Section: debug
 Architecture: any
-Depends: libnetfilter-cttimeout1 (=  ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
+Depends: libnetfilter-cttimeout (=  ${binary:Version}), ${misc:Depends}, ${shlibs:Depends}
 Description: fine-grain connection tracking timeout infrastructure for netfilter
  libnetfilter_cttimeout is the userspace library that provides the programming
  interface to the fine-grain connection tracking timeout infrastructure. With
