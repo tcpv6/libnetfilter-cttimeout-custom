@@ -15,10 +15,10 @@ build:
 	autoreconf -i
 
 override_dh_strip:
-	dh_strip --dbg-package=libnetfilter-cttimeout1-dbg
+	dh_strip --dbg-package=libnetfilter-cttimeout-dbg
 
 override_dh_installdocs:
-	dh_installdocs --link-doc=libnetfilter-cttimeout1
+	dh_installdocs --link-doc=libnetfilter-cttimeout
 
 override_dh_gencontrol:
 	if [ -f "../.VYOS_DEV_BUILD" ]; then \
